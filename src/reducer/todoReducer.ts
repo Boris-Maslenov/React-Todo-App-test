@@ -5,10 +5,16 @@ export interface IAction {
   payload?: any;
 }
 
+const findElem = (arr: IState, id: string): number => {
+  const findId = id;
+  const todos = arr.todos.concat();
+  const index = todos.findIndex(({ id }) => id === findId);
+  return index;
+};
+
 export const todoReducer = (state: IState, action: IAction) => {
   switch (action.type) {
     case "TODO_ADD":
-      console.log("ADD_TODO");
       return {
         ...state,
         todos: [...state.todos, action.payload],
@@ -22,6 +28,17 @@ export const todoReducer = (state: IState, action: IAction) => {
         ...state,
         todos,
       };
+    case "TODO_EDIT": {
+      const findId = action.payload;
+      const todos = state.todos.concat();
+      const index = todos.findIndex(({ id }) => id === findId);
+      todos[index].edit = !todos[index].edit;
+      return {
+        ...state,
+        todos,
+      };
+    }
+
     case "TODO_REMOVE":
       return {
         ...state,

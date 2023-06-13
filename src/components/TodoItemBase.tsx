@@ -19,7 +19,7 @@ export const TodoItemBase:React.FC<ITodo> = ({  id, text, completed }) => {
     }
 
     const handleEdit = (id: string) => {
-        dispatch({ type: 'TODO_REMOVE', payload: id })
+        dispatch({ type: 'TODO_EDIT', payload: id })
     }
 
     return(
@@ -41,16 +41,16 @@ export const TodoItemBase:React.FC<ITodo> = ({  id, text, completed }) => {
                 onClick={() => handleEdit(id)}
                 disabled={completed}
                 >
-                <FiEdit2 size='1.1em' />
+                <FiEdit2 size='2.0em' />
                 </Button>
                 <Button
                     variant='none'
                     className='text-danger'
                     onClick={() => handleRemove(id)}
                 >
-                    <AiOutlineDelete size='1.1em' />
+                    <AiOutlineDelete size='2.0em' />
                 </Button>
-      </ButtonGroup>
+            </ButtonGroup>
         </>
     )
 }
