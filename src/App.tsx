@@ -1,11 +1,14 @@
-import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Container>
+      <div className="App">
+        <h1>React Todo Ap</h1>
+      </div>
+    </Container>
+
   );
 }
 
