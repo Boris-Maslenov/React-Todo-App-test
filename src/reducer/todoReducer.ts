@@ -2,7 +2,7 @@ import { IState } from "../context/TodoState";
 
 export interface IAction {
   type: string;
-  payload: any;
+  payload?: any;
 }
 
 export const todoReducer = (state: IState, action: IAction) => {

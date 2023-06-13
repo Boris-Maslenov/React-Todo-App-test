@@ -13,6 +13,8 @@ export const Form = () => {
         setText(e.target.value)
     }
 
+    // React.ContextType<>
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!text.trim()) return;

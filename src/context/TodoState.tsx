@@ -2,7 +2,6 @@ import React from "react";
 import { todoReducer } from "../reducer/todoReducer";
 import { TodoContext } from "./TodoContext";
 
-
 export interface ITodo {
     id: string;
     text: string;
