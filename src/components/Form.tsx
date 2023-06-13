@@ -12,9 +12,7 @@ export const Form = () => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value)
     }
-
-    // React.ContextType<>
-
+    
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!text.trim()) return;
@@ -25,7 +23,7 @@ export const Form = () => {
             edit: false,
             show: true
           }
-          dispatch({type: 'ADD_TODO', payload: newTodo});
+          dispatch({type: 'TODO_ADD', payload: newTodo});
           setText('');
     }
 
