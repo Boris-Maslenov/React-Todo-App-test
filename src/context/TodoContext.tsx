@@ -1,3 +1,2 @@
 import React from "react";
-
-export const TodoContext = React.createContext<{} | null>(null);
+export const TodoContext = React.createContext<any>(null);

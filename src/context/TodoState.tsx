@@ -2,14 +2,17 @@ import React from "react";
 import { todoReducer } from "../reducer/todoReducer";
 import { TodoContext } from "./TodoContext";
 
-export interface IState {
-  todos: {
+
+export interface ITodo {
     id: string;
     text: string;
     completed: boolean;
     edit: boolean;
     show: boolean;
-  }[];
+}
+
+export interface IState {
+  todos: ITodo[];
 }
 
 type TodoStateProps = {
