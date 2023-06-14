@@ -10,15 +10,13 @@ function App() {
     <Container>
       <TodoState>
         <div className="App">
-          <h1>React Todo Ap</h1>
+          <h1>React Todo App (with react context)</h1>
         </div>
         <Form />
       <TodoList />
       <TodoFilters />
-
       </TodoState>
     </Container>
-
   );
 }
 
