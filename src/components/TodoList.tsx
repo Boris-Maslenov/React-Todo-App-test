@@ -11,7 +11,11 @@ export const TodoList = () => {
         <Container>
             <ListGroup>
                 {
-                    state.todos.map((todo, index) => todo.show && (
+                    state.todos.filter(({completed})=> state.activeFilter === "all" ? true :
+                        state.activeFilter === "completed" ?
+                        completed :
+                        !completed)
+                       .map((todo, index) => todo.show && (
                         <ListGroup.Item  
                             className='d-flex align-items-center'
                             key={todo.id}
@@ -22,7 +26,8 @@ export const TodoList = () => {
                                     <TodoItemEdit {...todo} />                                 
                             }
                             
-                        </ListGroup.Item>)
+                        </ListGroup.Item>
+                        )
                     )     
                 }
             </ListGroup>

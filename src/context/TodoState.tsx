@@ -11,7 +11,8 @@ export interface ITodo {
 }
 
 export interface IState {
-  todos: ITodo[];
+  todos: ITodo[],
+  activeFilter: "all" | "active" | "completed",
 }
 
 type TodoStateProps = {
@@ -24,6 +25,7 @@ const initialState: IState = {
     { id: "2", text: "Sleep", completed: false, edit: false, show: true },
     { id: "3", text: "Repeat", completed: false, edit: false, show: true },
   ],
+  activeFilter: "all",
 };
 
 export function TodoState({children}: TodoStateProps){

@@ -6,9 +6,9 @@ import { ITodo } from '../context/TodoState';
 import { BsCheckCircle } from "react-icons/bs";
 import { FcCancel } from "react-icons/fc";
 
-export const TodoItemEdit:React.FC<ITodo> = ({id}) => {
+export const TodoItemEdit:React.FC<ITodo> = ({id, text}) => {
      const { dispatch } = React.useContext(TodoContext);
-     const [value, setValue] = React.useState('')
+     const [value, setValue] = React.useState(text);
 
      const handleUpdate = () => {
           if (value.trim())

@@ -5,7 +5,7 @@ export interface IAction {
   payload?: any;
 }
 
-export const todoReducer = (state: IState, action: IAction) => {
+export const todoReducer = (state: IState, action: IAction): IState => {
   switch (action.type) {
     case "TODO_ADD":
       return {
@@ -41,11 +41,26 @@ export const todoReducer = (state: IState, action: IAction) => {
         todos,
       };
     }
-
     case "TODO_REMOVE":
       return {
         ...state,
         todos: [...state.todos.filter(({ id }) => id !== action.payload)],
+      };
+
+    case "filter/all":
+      return {
+        ...state,
+        activeFilter: "all",
+      };
+    case "filter/active":
+      return {
+        ...state,
+        activeFilter: "active",
+      };
+    case "filter/completed":
+      return {
+        ...state,
+        activeFilter: "completed",
       };
     default:
       return state;

@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { TodoState } from "./context/TodoState";
 import { Form } from "./components/Form";
 import { TodoList } from "./components/TodoList";
+import { TodoFilters } from "./components/TodoFilters";
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
           <h1>React Todo Ap</h1>
         </div>
         <Form />
-    <TodoList />
+      <TodoList />
+      <TodoFilters />
+
       </TodoState>
     </Container>
 
