@@ -4,18 +4,20 @@ import { TodoState } from "./context/TodoState";
 import { Form } from "./components/Form";
 import { TodoList } from "./components/TodoList";
 import { TodoFilters } from "./components/TodoFilters";
+import { TodoClear } from "./components/TodoClear";
 
 function App() {
   return (
-    <Container>
-      <TodoState>
+      <Container>
         <div className="App">
           <h1>React Todo App (with react context)</h1>
         </div>
-        <Form />
-      <TodoList />
-      <TodoFilters />
-      </TodoState>
+        <TodoState>
+          <Form />
+          <TodoList />
+          <TodoFilters />
+          <TodoClear />
+        </TodoState>
     </Container>
   );
 }

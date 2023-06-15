@@ -46,7 +46,11 @@ export const todoReducer = (state: IState, action: IAction): IState => {
         ...state,
         todos: [...state.todos.filter(({ id }) => id !== action.payload)],
       };
-
+    case "TODO_CLEAR":
+      return {
+        ...state,
+        todos: [],
+      };
     case "filter/all":
       return {
         ...state,
