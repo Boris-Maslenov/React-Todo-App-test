@@ -8,17 +8,17 @@ import { TodoClear } from "./components/TodoClear";
 
 function App() {
   return (
-      <Container>
+       <Container>
         <div className="App">
           <h1>React Todo App (with react context)</h1>
         </div>
-        <TodoState>
+       <TodoState>
           <Form />
           <TodoList />
           <TodoFilters />
           <TodoClear />
         </TodoState>
-    </Container>
+    </Container> 
   );
 }
 

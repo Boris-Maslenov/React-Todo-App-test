@@ -1,8 +1,7 @@
 import { useState, useContext } from "react";
 import { TodoContext } from "../context/TodoContext";
 import { Container, Form as TodoForm, Button } from 'react-bootstrap'
-import { nanoid } from "nanoid";
-
+import { v4 as uuidv4 } from "uuid";
 import { ITodo } from "../context/TodoState";
 
 export const Form = () => {
@@ -17,7 +16,7 @@ export const Form = () => {
         e.preventDefault();
         if (!text.trim()) return;
         const newTodo: ITodo = {
-            id: nanoid(5),
+            id: uuidv4(),
             text,
             completed: false,
             edit: false,

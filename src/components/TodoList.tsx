@@ -12,7 +12,7 @@ export const TodoList = () => {
     useEffect(()=>{
         const activeTodos = state.todos.filter(({completed})=> !completed);
         const countActiveTodos = activeTodos.length;
-        setCount(countActiveTodos)
+        setCount(countActiveTodos);
     },[state]);
     return (
         <Container>
