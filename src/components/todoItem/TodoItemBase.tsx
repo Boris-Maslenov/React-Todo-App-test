@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { TodoContext } from '../../context/TodoContext';
 import { Form, ButtonGroup, Button } from 'react-bootstrap';
-
-
-import { FiEdit2 } from 'react-icons/fi'
-import { AiOutlineDelete } from 'react-icons/ai'
+import { FaPen, FaTrashAlt } from 'react-icons/fa'
 
 import { ITodo } from '../../context/TodoState';
 
@@ -42,14 +39,14 @@ export const TodoItemBase:React.FC<ITodo> = ({  id, text, completed }) => {
                 onClick={() => handleEdit(id)}
                 disabled={completed}
                 >
-                <FiEdit2 size='2.0em' />
+                <FaPen size='2.0em' />
                 </Button>
                 <Button
                     variant='none'
                     className='text-danger'
                     onClick={() => handleRemove(id)}
                 >
-                    <AiOutlineDelete size='2.0em' />
+                    <FaTrashAlt size='2.0em' />
                 </Button>
             </ButtonGroup>
         </>

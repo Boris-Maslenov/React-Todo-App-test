@@ -3,8 +3,7 @@ import { TodoContext } from '../../context/TodoContext';
 import { Form, ButtonGroup, Button } from "react-bootstrap";
 import { ITodo } from '../../context/TodoState';
 
-import { BsCheckCircle } from "react-icons/bs";
-import { FcCancel } from "react-icons/fc";
+import { FaAngleDown, FaRegTimesCircle } from "react-icons/fa";
 
 export const TodoItemEdit:React.FC<ITodo> = ({id, text}) => {
      const { dispatch } = React.useContext(TodoContext);
@@ -39,14 +38,14 @@ export const TodoItemEdit:React.FC<ITodo> = ({id, text}) => {
               className="text-success"
               onClick={handleUpdate}
             >
-              <BsCheckCircle size="2.0em" />
+              <FaAngleDown size="2.0em" />
             </Button>
             <Button
               variant="none"
               className="text-danger"
               onClick={handleEdit}
             >
-              <FcCancel size="2.0em" />
+              <FaRegTimesCircle size="2.0em" />
             </Button>
           </ButtonGroup>
         </>
