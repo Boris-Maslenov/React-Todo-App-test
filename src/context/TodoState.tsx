@@ -21,9 +21,10 @@ type TodoStateProps = {
 
 const initialState: IState = {
   todos: [
-    { id: "1", text: "Eat", completed: false, edit: false, show: true },
-    { id: "2", text: "Sleep", completed: false, edit: false, show: true },
-    { id: "3", text: "Repeat", completed: false, edit: false, show: true },
+    { id: "1", text: "JavaScript", completed: true, edit: false, show: true },
+    { id: "2", text: "React", completed: true, edit: false, show: true },
+    { id: "3", text: "Redux", completed: true, edit: false, show: true },
+    { id: "4", text: "Angular", completed: false, edit: false, show: true },
   ],
   activeFilter: "all",
 };
