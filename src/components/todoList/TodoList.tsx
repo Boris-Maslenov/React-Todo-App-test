@@ -20,7 +20,7 @@ export const TodoList = () => {
                         state.activeFilter === "completed" ?
                         completed :
                         !completed)
-                       .map((todo, index) => todo.show && (
+                       .map((todo) => todo.show && (
                         <ListGroup.Item  
                             className='d-flex align-items-center'
                             key={todo.id}

@@ -10,7 +10,7 @@ export function TodoFilters() {
   }
 
   return (
-    <Container className='mt-4 text-secondary'>
+    <Container className='mt-5 mb-5 text-secondary'>
       <h4>Filters</h4>
       <Form.Check
         inline
