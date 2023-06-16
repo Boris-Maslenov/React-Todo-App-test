@@ -14,8 +14,8 @@ function App() {
         </div>
        <TodoState>
           <Form />
-          <TodoList />
           <TodoFilters />
+          <TodoList />
           <TodoClear />
         </TodoState>
     </Container> 
