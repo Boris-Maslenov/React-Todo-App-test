@@ -24,7 +24,7 @@ export const TodoItemBase:React.FC<ITodo> = ({  id, text, completed }) => {
 
     return(
         <>
-            <Form.Check checked={completed} onChange={(e) => handleComplete(id)} />
+            <Form.Check className="p-2" checked={completed} onChange={(e) => handleComplete(id)} />
             <Form.Label
                 className='flex-grow-1 text-left ml-3 mt-1'
                 style={{
@@ -36,6 +36,7 @@ export const TodoItemBase:React.FC<ITodo> = ({  id, text, completed }) => {
             </Form.Label>
             <ButtonGroup>
                 <Button
+                type="button"
                 variant='none'
                 className='text-info'
                 onClick={() => handleEdit(id)}

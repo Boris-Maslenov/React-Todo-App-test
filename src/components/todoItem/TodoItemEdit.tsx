@@ -23,7 +23,6 @@ export const TodoItemEdit:React.FC<ITodo> = ({id, text}) => {
              });
         };
 
-
      const handleEdit = () => {
           dispatch({
                type: "TODO_EDIT",
@@ -32,7 +31,7 @@ export const TodoItemEdit:React.FC<ITodo> = ({id, text}) => {
      }   
 
      return(
-          <>
+        <>
           <Form.Control value={value} onChange={(e)=>setValue(e.target.value)} type="text" data-id={id} />
           <ButtonGroup>
             <Button
