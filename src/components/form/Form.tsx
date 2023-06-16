@@ -4,6 +4,10 @@ import { Container, Form as TodoForm, Button, Row, Stack, Col } from 'react-boot
 import { v4 as uuidv4 } from "uuid";
 import { ITodo } from "../../context/TodoState";
 
+// Вопрос:
+// - почему пакет nanoid дает ошибку при тестировании (текст ошибки "nanoid annot use import statement outside a module" ) ?
+// p/s решить проблему так и не смог, пришлось воспользоваться uuidv
+
 export const Form = () => {
     const [text, setText] = useState('');
     const { dispatch } = useContext(TodoContext);
