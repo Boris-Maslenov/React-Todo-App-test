@@ -8,7 +8,6 @@ import { TodoItemEdit } from './TodoItemEdit';
 export const TodoList = () => {
     const [count, setCount] = useState(0);
     const { state } = useContext(TodoContext);
-
     useEffect(()=>{
         const activeTodos = state.todos.filter(({completed})=> !completed);
         const countActiveTodos = activeTodos.length;
@@ -17,7 +16,7 @@ export const TodoList = () => {
     return (
         <Container>
             <h3>{count ? `Todos free: ${count}` : 'No todos free'}</h3>
-            <ListGroup>
+            <ListGroup role="list">
                 {
                     state.todos.filter(({completed})=> state.activeFilter === "all" ? true :
                         state.activeFilter === "completed" ?
