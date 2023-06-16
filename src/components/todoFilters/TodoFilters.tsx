@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Container, Form } from 'react-bootstrap'
-import { TodoContext } from '../context/TodoContext'
+import { TodoContext } from '../../context/TodoContext'
 
 export function TodoFilters() {
   const { dispatch } = useContext(TodoContext);

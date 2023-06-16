@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { TodoContext } from '../context/TodoContext';
+import { TodoContext } from '../../context/TodoContext';
 import { Form, ButtonGroup, Button } from "react-bootstrap";
-import { ITodo } from '../context/TodoState';
+import { ITodo } from '../../context/TodoState';
 
 import { BsCheckCircle } from "react-icons/bs";
 import { FcCancel } from "react-icons/fc";

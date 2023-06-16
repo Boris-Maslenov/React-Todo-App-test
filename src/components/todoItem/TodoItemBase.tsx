@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { TodoContext } from '../context/TodoContext';
+import { TodoContext } from '../../context/TodoContext';
 import { Form, ButtonGroup, Button } from 'react-bootstrap';
 
 
 import { FiEdit2 } from 'react-icons/fi'
 import { AiOutlineDelete } from 'react-icons/ai'
 
-import { ITodo } from '../context/TodoState';
+import { ITodo } from '../../context/TodoState';
 
 export const TodoItemBase:React.FC<ITodo> = ({  id, text, completed }) => {
     const { dispatch } = React.useContext(TodoContext);

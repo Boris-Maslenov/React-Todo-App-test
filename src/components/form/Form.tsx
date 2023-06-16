@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
-import { TodoContext } from "../context/TodoContext";
+import { TodoContext } from "../../context/TodoContext";
 import { Container, Form as TodoForm, Button } from 'react-bootstrap'
 import { v4 as uuidv4 } from "uuid";
-import { ITodo } from "../context/TodoState";
+import { ITodo } from "../../context/TodoState";
 
 export const Form = () => {
     const [text, setText] = useState('');

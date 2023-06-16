@@ -1,5 +1,5 @@
 import {  useContext } from "react";
-import { TodoContext } from "../context/TodoContext";
+import { TodoContext } from "../../context/TodoContext";
 import {  Stack, Button } from 'react-bootstrap'
 
 export const TodoClear = () => {

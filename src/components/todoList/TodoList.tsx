@@ -1,9 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { Container, ListGroup } from 'react-bootstrap';
-import { TodoContext } from '../context/TodoContext';
-
-import { TodoItemBase } from './TodoItemBase';
-import { TodoItemEdit } from './TodoItemEdit';
+import { TodoContext } from '../../context/TodoContext';
+import { TodoItemBase, TodoItemEdit } from '../todoItem/';
 
 export const TodoList = () => {
     const [count, setCount] = useState(0);

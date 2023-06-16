@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 import { TodoState } from "./context/TodoState";
-import { Form } from "./components/Form";
-import { TodoList } from "./components/TodoList";
-import { TodoFilters } from "./components/TodoFilters";
-import { TodoClear } from "./components/TodoClear";
+import { Form } from "./components/form";
+import { TodoList } from "./components/todoList";
+import { TodoFilters } from "./components/todoFilters";
+import { TodoClear } from "./components/todoClear";
 
 function App() {
   return (
