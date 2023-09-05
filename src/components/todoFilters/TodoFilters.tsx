@@ -19,6 +19,7 @@ export function TodoFilters() {
         name='filter'
         id='all'
         onChange={handleFilterChange}
+        //checked={true}
       />
       <Form.Check
         inline

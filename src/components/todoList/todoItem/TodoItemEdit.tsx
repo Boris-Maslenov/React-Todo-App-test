@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Form, ButtonGroup, Button } from "react-bootstrap";
-import { ITodo } from '../../context/TodoState';
+import { ITodo } from '../../../context/TodoState';
 import { FaAngleDown, FaRegTimesCircle } from "react-icons/fa";
 
 interface ITodoItemEditProps extends  ITodo{

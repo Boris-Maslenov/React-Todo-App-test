@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { Container, ListGroup } from 'react-bootstrap';
 import { TodoContext } from '../../context/TodoContext';
-import { TodoItemBase, TodoItemEdit } from '../todoItem/';
+import { TodoItemBase, TodoItemEdit } from './todoItem';
 
 export const TodoList = () => {
     const { dispatch } = useContext(TodoContext);

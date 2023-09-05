@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { TodoContext } from '../../context/TodoContext';
+import { TodoContext } from '../../../context/TodoContext';
 import { Form, ButtonGroup, Button } from 'react-bootstrap';
 import { FaPen, FaTrashAlt } from 'react-icons/fa'
 
-import { ITodo } from '../../context/TodoState';
+import { ITodo } from '../../../context/TodoState';
 
 interface ITodoItemBaseProps extends ITodo{
     handleComplete: (id: string)=>void,
