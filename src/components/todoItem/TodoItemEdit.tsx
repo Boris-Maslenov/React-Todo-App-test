@@ -1,34 +1,15 @@
 import * as React from 'react';
-import { TodoContext } from '../../context/TodoContext';
 import { Form, ButtonGroup, Button } from "react-bootstrap";
 import { ITodo } from '../../context/TodoState';
-
 import { FaAngleDown, FaRegTimesCircle } from "react-icons/fa";
 
-export const TodoItemEdit:React.FC<ITodo> = ({id, text}) => {
-     const { dispatch } = React.useContext(TodoContext);
+interface ITodoItemEditProps extends  ITodo{
+  handleUpdate: (id:string, value: string)=>void,
+  handleEdit: (id:string)=>void
+}
+
+export const TodoItemEdit:React.FC<ITodoItemEditProps> = ({id, text, handleUpdate, handleEdit}) => {
      const [value, setValue] = React.useState(text);
-
-     const handleUpdate = () => {
-          if (value.trim())
-            dispatch({
-              type: "TODO_UPDATE",
-              payload: { id, value },
-            });
-
-            dispatch({
-               type: "TODO_EDIT",
-               payload:  id ,
-             });
-        };
-
-     const handleEdit = () => {
-          dispatch({
-               type: "TODO_EDIT",
-               payload: id ,
-          });
-     }   
-
      return(
         <>
           <Form.Control value={value} onChange={(e)=>setValue(e.target.value)} type="text" data-id={id} />
@@ -36,14 +17,14 @@ export const TodoItemEdit:React.FC<ITodo> = ({id, text}) => {
             <Button
               variant="none"
               className="text-success"
-              onClick={handleUpdate}
+              onClick={()=>handleUpdate(id, value)}
             >
               <FaAngleDown size="2.0em" />
             </Button>
             <Button
               variant="none"
               className="text-danger"
-              onClick={handleEdit}
+              onClick={()=>handleEdit(id)}
             >
               <FaRegTimesCircle size="2.0em" />
             </Button>
