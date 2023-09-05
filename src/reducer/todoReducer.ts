@@ -7,12 +7,12 @@ export interface IAction {
 
 export const todoReducer = (state: IState, action: IAction): IState => {
   switch (action.type) {
-    case "TODO_ADD":
+    case "todo/add":
       return {
         ...state,
         todos: [...state.todos, action.payload],
       };
-    case "TODO_COMPLETE":
+    case "todo/complete":
       const findId = action.payload;
       const todos = state.todos.concat();
       const index = todos.findIndex(({ id }) => id === findId);
@@ -21,7 +21,7 @@ export const todoReducer = (state: IState, action: IAction): IState => {
         ...state,
         todos,
       };
-    case "TODO_EDIT": {
+    case "todo/edit": {
       const findId = action.payload;
       const todos = state.todos.concat();
       const index = todos.findIndex(({ id }) => id === findId);
@@ -31,7 +31,7 @@ export const todoReducer = (state: IState, action: IAction): IState => {
         todos,
       };
     }
-    case "TODO_UPDATE": {
+    case "todo/update": {
       const { id: findId, value } = action.payload;
       const todos = state.todos.concat();
       const index = todos.findIndex(({ id }) => id === findId);
@@ -41,12 +41,12 @@ export const todoReducer = (state: IState, action: IAction): IState => {
         todos,
       };
     }
-    case "TODO_REMOVE":
+    case "todo/remove":
       return {
         ...state,
         todos: [...state.todos.filter(({ id }) => id !== action.payload)],
       };
-    case "TODO_CLEAR":
+    case "todo/clear":
       return {
         ...state,
         todos: [],
