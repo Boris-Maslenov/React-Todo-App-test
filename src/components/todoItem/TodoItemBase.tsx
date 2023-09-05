@@ -5,20 +5,13 @@ import { FaPen, FaTrashAlt } from 'react-icons/fa'
 
 import { ITodo } from '../../context/TodoState';
 
-export const TodoItemBase:React.FC<ITodo> = ({  id, text, completed }) => {
-    const { dispatch } = React.useContext(TodoContext);
-    const handleComplete = (id: string) => {
-            dispatch({ type: 'TODO_COMPLETE', payload: id })  
-    }
-    
-    const handleRemove = (id: string) => {
-        dispatch({ type: 'TODO_REMOVE', payload: id })
-    }
+interface ITodoItemBaseProps extends ITodo{
+    handleComplete: (id: string)=>void,
+    handleRemove: (id: string)=>void,
+    handleEdit: (id: string)=>void,
+}
 
-    const handleEdit = (id: string) => {
-        dispatch({ type: 'TODO_EDIT', payload: id })
-    }
-
+export const TodoItemBase:React.FC<ITodoItemBaseProps> = ({  id, text, completed, handleComplete, handleRemove, handleEdit }) => {
     return(
         <>
             <Form.Check className="p-2" checked={completed} onChange={(e) => handleComplete(id)} />
@@ -39,7 +32,7 @@ export const TodoItemBase:React.FC<ITodo> = ({  id, text, completed }) => {
                 onClick={() => handleEdit(id)}
                 disabled={completed}
                 >
-                <FaPen size='2.0em' />
+                    <FaPen size='2.0em' />
                 </Button>
                 <Button
                     variant='none'
