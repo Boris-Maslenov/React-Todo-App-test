@@ -2,7 +2,7 @@ import React from "react";
 import { IState } from "./TodoState";
 import { IAction } from "../reducer/todoReducer";
 
-interface IContext {
+export interface IContext {
     state: IState,
     dispatch: React.Dispatch<IAction>
 }
