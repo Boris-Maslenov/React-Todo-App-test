@@ -7,7 +7,7 @@ export const TodoClear = () => {
     const {dispatch, state: {todos}} = useContext(TodoContext);
 
     const clearHandler = () => {
-        dispatch({type: "TODO_CLEAR"});
+        dispatch({type: "todo/clear"});
     }
 
     return (

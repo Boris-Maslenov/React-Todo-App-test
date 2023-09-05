@@ -4,9 +4,8 @@ import { TodoContext } from '../../context/TodoContext';
 import { TodoItemBase, TodoItemEdit } from './todoItem';
 
 export const TodoList = () => {
-    const { dispatch } = useContext(TodoContext);
+    const { dispatch, state } = useContext(TodoContext);
     const [count, setCount] = useState(0);
-    const { state } = useContext(TodoContext);
     // Fix:
     useEffect(()=>{
         const activeTodos = state.todos.filter(({completed})=> !completed);
@@ -16,21 +15,21 @@ export const TodoList = () => {
 
     const handleComplete = (id: string) => {
         dispatch({ 
-            type: 'TODO_COMPLETE',
+            type: 'todo/complete',
             payload: id
         })  
     }
 
     const handleRemove = (id: string) => {
         dispatch({
-            type: 'TODO_REMOVE',
+            type: 'todo/remove',
             payload: id
         })
     }
 
     const handleEdit = (id: string) => {
         dispatch({
-            type: 'TODO_EDIT',
+            type: 'todo/edit',
             payload: id
         })
     }
@@ -39,12 +38,12 @@ export const TodoList = () => {
         if (value.trim()){
             // Обновляем данные
             dispatch({
-                type: "TODO_UPDATE",
+                type: "todo/update",
                 payload: { id, value },
             });
         }
         dispatch({
-            type: "TODO_EDIT",
+            type: "todo/edit",
             payload:  id ,
         });
       };
