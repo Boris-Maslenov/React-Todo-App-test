@@ -29,12 +29,12 @@ export const TodoList = () => {
   }, []);
 
   const handleUpdate = useCallback((id: string, value: string) => {
-    if (value.trim()) {
-      dispatch({
-        type: "todo/update",
-        payload: { id, value },
-      });
-    }
+    if (!value.trim()) return;
+
+    dispatch({
+      type: "todo/update",
+      payload: { id, value },
+    });
 
     dispatch({
       type: "todo/edit",
